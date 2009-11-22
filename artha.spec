@@ -13,7 +13,7 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.14
 BuildRequires:	gtk+2-devel >= 2.12
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig
 Requires:	WordNet
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
