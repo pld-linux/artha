@@ -1,14 +1,14 @@
 Summary:	An off-line English thesaurus based on WordNet
 Summary(pl.UTF-8):	Angielski słownik synonimów oparty o WordNet
 Name:		artha
-Version:	0.9.1
+Version:	1.0.2
 Release:	1
 License:	LGPL
 Group:		Applications/Dictionaries
 Source0:	http://dl.sourceforge.net/artha/%{name}-%{version}.tar.bz2
-# Source0-md5:	6614a81980e7bccf55449ad6ab9ee080
+# Source0-md5:	8391fc152531d98bc7db6a7695611137
 URL:		http://artha.sourceforge.net
-BuildRequires:	WordNet-devel
+BuildRequires:	WordNet-devel >= 3.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.14
@@ -32,6 +32,7 @@ używania.
 %setup -q
 
 %build
+%{__libtoolize}
 %{__aclocal}
 %{__autoheader}
 %{__autoconf}
