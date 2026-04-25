@@ -1,23 +1,28 @@
 Summary:	An off-line English thesaurus based on WordNet
 Summary(pl.UTF-8):	Angielski słownik synonimów oparty o WordNet
 Name:		artha
-Version:	1.0.2
+Version:	1.0.5
 Release:	1
-License:	LGPL
+License:	GPL v2+
 Group:		Applications/Dictionaries
-Source0:	http://downloads.sourceforge.net/artha/%{name}-%{version}.tar.bz2
-# Source0-md5:	8391fc152531d98bc7db6a7695611137
-URL:		http://artha.sourceforge.net
+Source0:	https://downloads.sourceforge.net/artha/%{name}-%{version}.tar.bz2
+# Source0-md5:	a916a7a943ac676a60f03cc839b04f37
+URL:		https://artha.sourceforge.net/
 BuildRequires:	WordNet-devel >= 3.0
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	dbus-devel
-BuildRequires:	dbus-glib-devel
-BuildRequires:	glib2-devel >= 2.14
-BuildRequires:	gtk+2-devel >= 2.12
-BuildRequires:	libtool
+BuildRequires:	dbus-devel >= 0.60
+BuildRequires:	dbus-glib-devel >= 0.60
+BuildRequires:	glib2-devel >= 1:2.22
+BuildRequires:	gtk+2-devel >= 2:2.24
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
+BuildRequires:	xorg-lib-libX11-devel
 Requires:	WordNet
+Requires:	dbus-libs >= 0.60
+Requires:	dbus-glib >= 0.60
+Requires:	glib2 >= 1:2.22
+Requires:	gtk+2 >= 2:2.24
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -56,9 +61,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog INSTALL NEWS README TODO
-%attr(755,root,root) %{_bindir}/%{name}
+%doc AUTHORS ChangeLog NEWS README TODO
+%attr(755,root,root) %{_bindir}/artha
 %{_datadir}/%{name}
-%{_desktopdir}/%{name}.desktop
-%{_pixmapsdir}/%{name}.png
-%{_mandir}/man1/*
+%{_desktopdir}/artha.desktop
+%{_pixmapsdir}/artha.png
+%{_mandir}/man1/artha.1*
